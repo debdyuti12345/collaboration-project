@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+	background:
+		url('http://freedomreply.com/wp-content/uploads/2014/06/background-images-for-web-design-1.jpg')
+		fixed;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+
+</style>
+</head> 
+<body>
+
+
+<div  name="view_job_details" class="container" ng-controller="JobController as ctrl" style="width:800px; margin:0 auto;">
+
+	<div class="form-group">
+		<b>ID :</b><label>{{selectedJob.id}}</label> <br> 
+		<b>Title:</b> <label>{{selectedJob.title}}</label>
+		<b>Date: </b><label>{{selectedJob.dateTime}}</label> <br> <br>
+		<b>Description:</b> <label>{{selectedJob.description}}</label>
+		<b>Qualification :</b><label>{{selectedJob.qualification}}</label>
+		
+		<button type="button"  ng-click="ctrl.applyForJob(selectedJob.id)" 
+			       class="btn btn-warning btn-sm">Apply for job</button>
+		
+
+
+	</div>
+
+</div>
+</body>
+</html>

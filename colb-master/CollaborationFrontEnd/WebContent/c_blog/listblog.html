@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<br>
+<br>
+<div>
+<div  class="container" ng-controller="BlogController as ctrl"  name="listblog">
+
+
+Welcome to Blog
+<div ng-init=ctrl.fetchAllBlogs()>
+<div ng-repeat="blog in ctrl.blogs" ng-show="blog.status=='A'">
+
+{{blog.blog}}
+
+<a href = "#"  ng-click="ctrl.getSelectedBlog(blog.id)"> <br>Title  {{blog.title}}&nbsp;&nbsp; -  Written By:  {{blog.userid}}&nbsp;&nbsp;Date:{{blog.datetime}}</a>
+</div>
+
+</div>
+</div>
+</div>
+</body>
+</html>

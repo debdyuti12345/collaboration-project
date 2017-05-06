@@ -1,0 +1,49 @@
+ <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+ </head>
+<section id="header" ng-controller="UserController as ctrl">
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-2 col-xs-12">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#/admin"><img src="" /></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-10 col-xs-12">
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="nav navbar-nav navbar-right navbar-form">
+                                        <li>
+                                            <a href="#" class="account-access-btn">
+                                                <span><img class="img-circle" src="" /></span>&nbsp;&nbsp;<span class="account-access-btn-name">{{currentUser.name}}</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" ng-click="ctrl.logout()">Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <br>
+    <br>
+    <br>
+    
+    

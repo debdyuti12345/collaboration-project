@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div  name="manageusers">
+<div class="generic-container" ng-controller="UserController as ctrl">
+
+				<div class="table-responsive custom-bg-inset">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>UserID</th>
+								<th> Name</th>
+								<th>Address</th>
+								<th>Email</th>
+								<th>Mobile</th>
+								<th>Is Online</th>
+								<th>Role</th>
+								<th>Set Admin</th>
+								<th>Remove Admin</th>								
+							</tr>
+						</thead>
+						<tbody ng-init="ctrl.fetchAllUsers()">
+							<tr ng-repeat="user in ctrl.users">
+								<td>{{user.userid}}</td>
+								<td>{{user.name}}</td>
+								<td>{{user.address}}</td>
+								<td>{{user.email}}</td>
+								<td>{{user.mobile}}</td>
+								<td>{{user.is_online}}</td>
+								<td>{{user.role}}</td>
+								<td>
+									<button ng-show="user.role=='employee'" ng-click="ctrl.setAdmin(user.userid)" class="btn btn-warning">Set Admin</button>
+								</td>
+								<td>
+									<button ng-show="user.role=='admin'" ng-click="ctrl.removeAdmin(user.userid)" class="btn btn-warning">Remove Admin</button>
+								</td>
+							</tr>
+							</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div name="myblog" style="width:800px; margin:0 auto;">
+<div ng-controller="BlogController as ctrl">
+<div ng-init=ctrl.fetchAllBlogs()>
+<div ng-show ="blog.userid==currentUser.userid" ng-repeat="blog in ctrl. blogs">
+{{blog.blog}}
+Written by::{{blog.userid}}
+<br>
+<br>
+<b>{{blog.title}}</b>
+<br>
+<br>
+{{blog.description}}
+<br>
+
+<strong>Time{{blog.datetime}}</strong>
+<br>
+
+<strong>Blog Status:</strong>{{blog.status}}
+<br>
+<strong>Reason:</strong>{{blog.reason}}
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

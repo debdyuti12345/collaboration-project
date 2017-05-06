@@ -1,0 +1,83 @@
+
+
+ <style>
+body {
+	background:
+		url('http://www.planwallpaper.com/static/images/bg1.jpg')
+		fixed;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+</style>
+<body>
+
+
+	<section id="register" 
+	ng-controller="UserController as ctrl">
+	<div class="container">
+
+		<div class="register-box">
+			<h2>Register</h2>
+			<form name="myForm" id="register" ng-submit="ctrl.submit()" role="form"
+				enctype="application/json">
+				<div class="form-block">
+					<input type="text" class="form-control" name="userid"
+						ng-model="ctrl.user.userid" placeholder="User  Id.." />
+				</div>
+				<br>
+				<div class="form-block">
+					<input type="text" class="form-control" name="name"
+						ng-model="ctrl.user.name" placeholder=" Name.." />
+				</div>
+				<br>
+				<div class="form-block">
+					<input type="password" class="form-control" name="password"
+						ng-model="ctrl.user.password" placeholder="Password.." />
+				</div>
+				<br>
+				<div class="form-block">
+				<b>Register As:</b>
+					<label class="radio-inline"> <input ng-model="ctrl.user.role" type="radio" value="student"
+						name="optradio">Student 
+					</label> <label class="radio-inline"> <input ng-model="ctrl.user.role" type="radio" value="employee"
+						name="optradio">Employee
+					</label> <label class="radio-inline"> <input ng-model="ctrl.user.role" type="radio" value="alumni"
+						name="optradio">Alumni
+					</label>
+				</div>
+				<br> 
+				<div class="form-block">
+					<input type="text" class="form-control" name="address"
+						ng-model="ctrl.user.address" placeholder="Address.." />
+				</div>
+				<br>
+				<div class="form-block">
+					<input type="email" ng-model="ctrl.user.email" name="email"
+						class="form-control" placeholder="Email.." />
+				</div>
+				<br>
+				<div class="form-block">
+					<input type="password" ng-model="ctrl.user.mobile" name="mobile"
+						class="form-control" placeholder="Mobile.." />
+				</div>
+				<br>
+				<div class="form-block">
+					<div class="row">
+						<div class="col-md-6">
+							<input type="submit" class="btn btn-danger" value="Join Now" />
+						</div>
+						<div class="col-md-6">
+							<button type="button" ng-click="ctrl.reset()"
+									class="btn btn-warning ">Reset Form</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</section>
+
+
+</body>

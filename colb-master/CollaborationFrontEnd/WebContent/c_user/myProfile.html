@@ -1,0 +1,49 @@
+
+<body>
+<br>
+<br>
+<div  name="myProfile">
+	<div class="generic-container" ng-controller="UserController as ctrl">
+
+                    Current User :  {{currentUser.name}}
+
+			
+				
+					<h3>My Profile</h3>
+
+
+							<div class="container">
+            <div class="custom-bg-inset">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="profile-image">
+                            <img src="resources/img/user-128.png" class="img-circle img-thumbnail" />
+                        </div>
+                        <div class="profile-heading">
+                            <h2><b><u>{{currentUser.userid}}</u>&nbsp;&nbsp;</b></h2>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-md-12"><h4>Email&nbsp;:&nbsp;{{currentUser.email}}</h4></div>
+                    <div class="col-md-12"><h4>Mobile&nbsp;:&nbsp;{{currentUser.mobile}}</h4></div>
+                    <div class="col-md-12"><h4>Role&nbsp;:&nbsp;{{currentUser.role}}</h4></div>
+                    <div class="col-md-12"><h4>Password&nbsp;:&nbsp;{{currentUser.password}}</h4></div>
+                     <div class="col-md-12"><h4>Address&nbsp;:&nbsp;{{currentUser.address}}</h4></div>
+                     
+                    <div class="clearfix"></div>
+                    <div class="col-md-12">
+                        <a href="#/updateuser"  class="custom-btn btn">Edit Profile</a>
+                        <a href="#/"ng-click="ctrl.delete()" class="custom-btn btn">Delete Account</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+	</div>
+	</div>
+						
+				
+
+</body>

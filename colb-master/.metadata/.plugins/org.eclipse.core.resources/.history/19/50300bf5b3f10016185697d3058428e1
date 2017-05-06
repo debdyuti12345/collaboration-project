@@ -1,0 +1,5 @@
+package com.niit.collaborativebackend.config;
+
+public class ApplicationContextConfig {
+
+}

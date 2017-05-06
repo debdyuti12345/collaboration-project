@@ -1,0 +1,45 @@
+
+<div ng-hide="currentUser==''">
+
+    <div name="post_job" ng-controller="JobController as ctrl">
+        <div class="container">
+
+            <div class="row">
+               
+                <div class="col-md-10">
+
+                    <div class="form-area custom-bg-inset">
+                        <h2 class="text-center">Post Job</h2>
+                        <form name="myForm" ng-submit="ctrl.submit()">
+                            <div class="form-block">
+                                <input type="text" ng-model="ctrl.job.title" class="form-control" placeholder="Job Headline..." />
+                            </div>
+                            <br>
+                            <div class="form-block">
+                                <textarea class="form-control" ng-model="ctrl.job.description" placeholder="Job Description..."></textarea>
+                            </div>
+                            <br>
+                            <div class="form-block">
+                               <input type="text" class="form-control" ng-model="ctrl.job.qualification" placeholder="Qualifications..." />
+                            </div>
+                            <br>
+                            <div class="form-block">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="submit" class="custom-btn form-control" value="Save" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="reset" ng-click="ctrl.reset()" class="custom-btn form-control" value="Reset" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+  </div>
+</div>
+ 

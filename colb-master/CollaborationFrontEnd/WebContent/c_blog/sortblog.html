@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<br>
+<br>
+ <section id="sortblog">
+        <div class="container"  ng-controller="BlogController as ctrl">
+
+            <div class="row">
+               
+                <div class="col-md-10" ng-init="ctrl.fetchAllBlogs()">
+                    <div>
+                        <div ng-repeat="blog in ctrl.blogs" class="article custom-bg-inset">
+                            <div  class="article-head">
+                                <a class="article-avatar" href="#">
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{blog.userid}}&nbsp;
+                                    <span class="article-date">{{blog.datetime}}</span>
+                                </a>
+                            </div>
+                            <hr />
+                            <a href="#">
+                                <div class="article-heading">
+                                    <h2>{{blog.title}}</h2>
+                                </div>
+                                <div class="article-img mb10">
+                                    <img src="" />
+                                </div>
+                                <div class="article-description">
+                                    <p>
+                                       {{blog.description}}
+                                    </p>
+                                </div>                                
+                            </a>
+                            <hr />
+                            <div class="article-foot">
+                            <p class="mb10" ng-show="blog.status=='A'">
+                            <strong style="color: green !important;text-transform: uppercase;">Approved &nbsp; <i class="fa fa-check"></i> </strong>
+                            <br>
+                                    {{blog.reason}}
+                                    </p>
+                                    <p class="mb10" ng-show="blog.status=='R'">
+                            <strong style="color: red !important;text-transform: uppercase;">Rejected &nbsp;<i style="color: red !important;" class="fa fa-times"></i></strong>
+                            <br>
+                                    {{blog.reason}}
+                                    </p>
+                                    <textarea rows="2" class="form-control mb10"  ng-show="blog.status=='N'" placeholder="Reason..." ng-model="reason"></textarea>
+                               <button ng-show="blog.status=='N'" ng-click="ctrl.accept(blog.id,reason)" class="btn custom-btn mr10">Accept</button>
+                               <button ng-show="blog.status=='N'" ng-click="ctrl.reject(blog.id,reason)" class="btn custom-btn">Reject</button>
+                            </div>
+                        </div>
+
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

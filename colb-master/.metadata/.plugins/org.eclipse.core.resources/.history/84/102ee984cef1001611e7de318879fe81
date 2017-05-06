@@ -1,0 +1,34 @@
+package com.niit.collaborativebackend;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaborativebackend.dao.UserDAO;
+import com.niit.collaborativebackend.model.User;
+
+public class UserTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		
+		context.scan("com.niit.collaborativebackend");
+		context.refresh();
+		
+		
+	   UserDAO userDao = 	(UserDAO) context.getBean("userDao");
+	   
+	   User user = 	(User) context.getBean("user");
+       user.setId("US101");
+       user.setMobile("90876445");
+       user.setEmail("sfhh@gmail.com");
+       user.setAddress("kolkata");
+       user.setIs_online('n');
+       user.setName("Shabnam");
+       user.setPassword("kol1234");
+       user.setReason("u r student");
+       user.setRole("admin");
+       user.setStatus('N');
+       
+	}
+
+}

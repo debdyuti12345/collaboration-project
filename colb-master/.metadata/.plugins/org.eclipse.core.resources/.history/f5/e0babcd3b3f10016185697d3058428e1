@@ -1,0 +1,29 @@
+package com.niit.collaborativebackend.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
+public class C_UserDetails {
+	@Id
+	private String id;
+	private String name;
+	private String password;
+	private String address;
+    @Column(unique=true)
+	private String email;
+	private String mobile;
+	private char status;
+	private char is_online;
+	private String role;
+	private String reason;
+	
+
+}

@@ -1,0 +1,5 @@
+package com.niit.collaborative.config;
+
+public class WebAppInitializer {
+
+}

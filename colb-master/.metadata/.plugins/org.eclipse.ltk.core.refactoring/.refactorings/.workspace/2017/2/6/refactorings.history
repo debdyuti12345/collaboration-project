@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ColaborativeBackEnd&apos; to &apos;ColaborativeController&apos;" description="Rename resource &apos;ColaborativeBackEnd&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ColaborativeBackEnd" name="ColaborativeController" stamp="1486649882306" updateReferences="true"/>
+</session>

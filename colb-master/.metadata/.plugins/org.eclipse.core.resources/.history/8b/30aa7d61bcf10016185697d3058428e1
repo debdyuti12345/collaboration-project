@@ -1,0 +1,33 @@
+package com.niit.collaborativebackend.config;
+
+import java.sql.DriverManager;
+
+import javax.sql.DataSource;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+@Configuration
+@ComponentScan("com.niit.collaborativebackend")
+@EnableTransactionManagement
+public class ApplicationContextConfig {
+	
+	
+
+		@Bean(name="dataSource")
+		public DataSource getDataSource(){
+			DriverManagerDataSource dataSource=new DriverManagerDataSource();
+		dataSource.setDriverClassName("org.jdbc.driver.OracleDriver");
+			dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+			dataSource.setUsername("system");
+			dataSource.setPassword("root");
+			Properties connectionProperties=new Properties();
+			connectionProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+			dataSource.setConnectionProperties(connectionProperties);
+			return dataSource;
+		}
+		
+	}	
+
+

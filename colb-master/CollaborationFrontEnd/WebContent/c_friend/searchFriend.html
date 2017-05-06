@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body
+{
+    background: url('http://hd-wall-papers.com/images/wallpapers/website-background-images/website-background-images-17.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+</style>
+</head>
+<body>
+<section id="searchFriend" ng-controller="FriendController as ctrl">
+<div ng-controller="UserController">
+{{currentUser.userid}}
+{{sender}}
+        <div class="container">
+            <div class="custom-bg-inset">
+                <div class="row">
+                   <div class="col-md-12">
+                       <h2 class="text-center">Friend Requests</h2>
+                   </div>
+                    
+                    <div class="col-md-6"  ng-init="ctrl.searchAllUsers()">
+                        <div class="col-md-12" ng-init="ctrl.getMyFriendRequests()">
+                            <h4 class="text-center"><u>Send Request</u></h4>
+                        </div>
+                        <input class="form-control mb10" ng-model="searchtext" type="text" placeholder="Search Users.." />
+                        <div class="friend-box">
+                            <div class="friend" ng-repeat="user in ctrl.users | filter : searchtext" ng-show="user.userid!=currentUser.userid">
+                               
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{user.name}}
+                                                              
+                                <button ng-click="ctrl.sendFriendRequest(user.userid)" class="btn btn-primary">
+                                    Add Friend &nbsp;<i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="friend" ng-repeat="user in ctrl.friends | filter : searchtext" ng-show="user.userid!=currentUser.userid">
+                                
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{user.name}}
+                                                            
+                                <button ng-click="ctrl.sendFriendRequest(user.userid)" class="btn btn-success">
+                                    Request Sent &nbsp;<i class="fa fa-check"></i>
+                                </button>
+                            </div>
+                            <div class="friend" ng-repeat="user in ctrl.friends | filter : searchtext" ng-show="friend.status=='A'">
+                              
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{user.sender.name}}
+                                                            
+                                <button ng-click="ctrl.unFriend(user.userid)" class="btn btn-danger">
+                                    Unfriend
+                                </button>
+                            </div>
+                             </div>
+                    </div>
+                    <div class="col-md-6" ng-init="ctrl.getMyFriends()">
+                        <div class="col-md-12">
+                            <h4 class="text-center"><u>Pending Requests</u></h4>
+                        </div>        
+                        <div class="clearfix"></div>                
+                        <div class="friend-box" style="height: 294px;">
+                            <div class="friend" ng-repeat="friend in ctrl.friendlist" ng-show="friend.friendid==currentUser.userid && friend.status=='N'">
+                               
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{friend.sender.name}}
+                                
+                                <button ng-click="ctrl.acceptFriendRequest(friend.useridd)" class="btn btn-success">
+                                    Accept
+                                </button>
+                                <button ng-click="ctrl.rejectFriendReject(friend.useridd)" class="btn btn-danger">
+                                    Reject
+                                </button>
+                            </div>
+                           </div>
+                    </div>
+                
+                <div class="clearfix" >
+                
+                <hr>
+                
+                <div class="col-md-12" ng-controller="ChatpController">
+                 <div class="col-md-12">
+                       <h2 class="text-center">Friendlist</h2>
+                   </div>
+                
+                        <input class="form-control mb10" type="text" ng-model="searchtf" placeholder="Search Friends..." />
+                        <div class="friend-box">
+                            <div class="friend" ng-repeat="friend in ctrl.friendlist | filter : searchtf" ng-show="friend.status=='A'">
+                                <a href="#">
+                                    <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{friend.sender.name}}
+                               
+                                <button ng-click="ctrl.unFriend(friend.useridd)" class="btn btn-warning">
+                                    Unfriend
+                                </button>
+                                </a>
+                               
+                                  <button ng-click="chat(friend.useridd)"
+									class="btn btn-warning" >Chat{{friend.useridd}}</button>
+								   
+								
+                              
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>                
+                </div>
+                
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>

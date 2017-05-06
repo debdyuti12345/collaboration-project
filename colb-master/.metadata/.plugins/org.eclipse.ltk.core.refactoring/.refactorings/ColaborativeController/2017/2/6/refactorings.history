@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ColaborativeController/src/main/java/com/niit/colaborative&apos; to &apos;collaborative&apos;" description="Rename resource &apos;colaborative&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/niit/colaborative" name="collaborative" stamp="1486738431844" updateReferences="true"/>
+</session>

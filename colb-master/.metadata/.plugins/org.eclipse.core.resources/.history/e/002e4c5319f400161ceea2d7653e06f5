@@ -1,0 +1,5 @@
+package com.niit.collaborative.controller;
+
+public class UserController {
+
+}

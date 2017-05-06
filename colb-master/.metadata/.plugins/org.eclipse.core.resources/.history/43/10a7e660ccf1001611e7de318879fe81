@@ -1,0 +1,16 @@
+package com.niit.collaborativebackend.dao;
+
+public interface UserDAO {
+	public List<User> list();
+
+	public User get(String id);
+	
+	public boolean save(User user);
+	public boolean update(User user);
+
+	public boolean delete(String userid);
+	
+	public User isValidUser(String userid, String password);
+	public boolean saveOrUpdate(User user);
+
+}

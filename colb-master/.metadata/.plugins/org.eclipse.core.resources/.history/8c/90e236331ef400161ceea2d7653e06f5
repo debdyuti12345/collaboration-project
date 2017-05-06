@@ -1,0 +1,38 @@
+package com.niit.collaborative.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.niit.collaborativebackend.dao.UserDAO;
+import com.niit.collaborativebackend.model.User;
+
+
+@RestController
+public class UserController {
+	@Autowired
+	UserDAO userDao;
+	@Autowired 
+	User user;
+	@GetMapping("/getAll")
+	public ResponseEntity<List<User>> getAllUser(){
+		List users =userDao.list();
+		if(users.isEmpty()){
+			
+		user.setErrorcode("100");
+		user.setErrorMessage("no users are available");
+		users.add(user);
+		return new ResponseEntity<List<User>>(users,HttpStatus.NOT_FOUND);
+		}
+		user.setErrorcode("200");
+		user.setErrorcode("successfully fechedfrom database");
+		return new ResponseEntity<List<User>>(users, HttpStatus.FOUND);
+		
+	}
+
+}

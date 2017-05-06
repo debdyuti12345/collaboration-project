@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body
+{
+    background-image: url("http://freedomreply.com/wp-content/uploads/2014/06/background-images-for-web-design-6.jpg") fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+</style>
+
+
+
+</head>
+<body>
+<div name="rest"  style="width:800px; margin:0 auto;">
+<h1 allign="center">File Upload with Jersey</h1>
+
+	<form action="http://localhost:8081/ColaborativeController/rest/file/upload" method="post" enctype="multipart/form-data">
+
+	   <p>
+		Select a file : <input type="file" name="file" size="45" style="font-face: 'Comic Sans MS'; font-size: larger; color: teal; background-color: #00FFFF; border: 3pt ridge lightgrey"/>
+	   </p>
+
+	   <input type="submit" value="Upload It" style="font-face: 'Comic Sans MS'; font-size: larger; color: teal; background-color: #FFFFC0; border: 3pt ridge lightgrey"/>
+	</form>
+</div>
+</body>
+</html>

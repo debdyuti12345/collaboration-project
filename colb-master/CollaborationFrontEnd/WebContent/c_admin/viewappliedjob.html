@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <section id="admin-area" ng-controller="JobController as ctrl">
+        <div class="container">
+
+            <div class="row">
+               
+                <div class="col-md-10">
+
+                    <div class="table-responsive custom-bg-inset">
+                        <table class="table" ng-init="ctrl.getAllAppliedJobs()">
+                            <thead>
+                                <tr>
+                                    <th>JobID</th>
+                                    <th>Email</th>
+                                    <th>Date Applied</th>
+                                    <th>Status</th>    
+                                    <th>Reason</th>                                
+                                    <th>Select</th>
+                                    <th>Call</th>
+                                    <th>Interview</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="jobapplication ctrl.in jobapplications">
+                                    <td><a href="#/job-detail" ng-click="ctrl.getJobDetails(jobapplication.jobid)">{{jobapplication.jobid}}</a></td>
+                                    <td>{{jobapplication.userid}}</td>
+                                    <td>{{jobapplication.applieddate}}</td>
+                                    <td>{{jobapplication.status}}</td> 
+                                    <td>
+                                    <p ng-show="jobapplication.status=='S' || jobapplication.status=='C' || jobapplication.status=='R'">
+                                    {{jobapplication.reason}}
+                                    </p>
+                                    <textarea rows="2" class="form-control"  ng-show="jobapplication.status=='N'" placeholder="Reason..." ng-model="reason"></textarea>
+                                    </td>                                   
+                                    <td>
+                                        <button ng-show="jobapplication.status=='N'" ng-click="ctrl.selectUser(jobapplication.userid,jobapplication.jobid,reason)" class="btn custom-btn">Select</button>
+                                    </td>
+                                    <td>
+                                        <button ng-show="jobapplication.status=='N' || jobapplication.status=='S'" ng-click="ctrl.callForInterview(jobapplication.userid,jobapplication.jobid,jobapplication.reason)" class="btn custom-btn">Interview</button>
+                                    </td>
+                                    <td >
+                                        <button ng-show="jobapplication.status=='N'" ng-click="ctrlrejectJobApplication(jobapplication.userid,jobapplication.jobid,reason)" class="btn custom-btn-red">Reject</button>
+                                    </td>
+                                </tr>                               
+                            </tbody>
+                        </table>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

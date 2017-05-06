@@ -1,0 +1,5 @@
+package com.niit.collaborativebackend.model;
+
+public class BaseDomain {
+
+}

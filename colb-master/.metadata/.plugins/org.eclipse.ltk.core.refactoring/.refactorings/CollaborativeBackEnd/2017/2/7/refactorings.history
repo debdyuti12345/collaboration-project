@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CollaborativeBackEnd/src/main/java/com/niit/collaborativebackend/model/C_UserDetails.java&apos; to &apos;User.java&apos;" description="Rename resource &apos;C_UserDetails.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/niit/collaborativebackend/model/C_UserDetails.java" name="User.java" stamp="1486977052497" updateReferences="true"/>
+</session>

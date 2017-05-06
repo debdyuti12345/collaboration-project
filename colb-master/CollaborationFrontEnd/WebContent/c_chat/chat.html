@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body
+{
+    background: url('http://freedomreply.com/wp-content/uploads/2014/06/background-images-for-web-design-1.jpg') fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+</style>
+</head>
+<body>
+ <div>
+    <p>
+    <p>
+    <p>
+    <p>
+    <p>
+    <div ng-controller="ChatController" class="container">
+    
+    <div class="container">
+            <div class="custom-bg-inset">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Group Chat Box</h2>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <h4 class="text-center"><u>Conversation</u></h4>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="chat-send">
+                        <form ng-submit="addMessage()" name="messageForm">
+                            <textarea class="form-control" placeholder="Type Message..." ng-model="message"></textarea>
+                            <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
+                            <button ng-disabled="message.length > max || message.length === 0" class="btn custom-btn pull-right">Send&nbsp;&nbsp;<i class="fa fa-send"></i></button>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="chat-box">
+                            <div class="mb10" ng-repeat="message in messages | orderBy:'time':true">
+                            <div class="article-head">
+                                    <a class="article-avatar" href="#">
+                                        <img src="resources/img/user-128.png" />&nbsp;&nbsp;{{message.userid}} Says :
+                                        <span class="article-date">{{message.time | date:'HH:mm'}}</span>
+                                    </a>
+                                </div>                                
+                                <label class="msg-receive">{{message.message}}</label><br />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+ 
+
+  </div>
+
+</body>
+</html>

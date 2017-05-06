@@ -1,0 +1,64 @@
+package com.niit.collaborativebackend.dao;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.niit.collaborativebackend.model.User;
+@Repository("userDao")
+public class UserDAOImpl implements UserDAO{
+	@Autowired
+	private SessionFactory sessionFactory;
+	public UserDAOImpl(SessionFactory sessionFactory) {
+		try {
+			this.sessionFactory = sessionFactory;
+		} catch (Exception e) {
+			//log.error(" Unable to connect to db");
+			e.printStackTrace();
+		}
+	}
+
+	public List<User> list() {
+		// TODO Auto-generated method stub
+		List<User> list = (List<User>) sessionFactory.getCurrentSession()
+				
+				.createCriteria(User.class)
+				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
+
+		return list;
+	}
+
+	public User get(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean save(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean update(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delete(String id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public User isValidUser(String id, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean saveOrUpdate(User user) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

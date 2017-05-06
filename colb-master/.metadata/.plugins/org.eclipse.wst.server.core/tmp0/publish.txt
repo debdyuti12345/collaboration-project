@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Feb 16 15:09:31 IST 2017
+org.eclipse.jst.j2ee.server\:CollaborativeBackEnd=WEB-INF/lib/CollaborativeBackEnd-0.0.1-SNAPSHOT.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\sh\\.m2\\repository\\org\\springframework\\spring-web\\4.3.4.RELEASE\\spring-web-4.3.4.RELEASE.jar=WEB-INF/lib/spring-web-4.3.4.RELEASE.jar

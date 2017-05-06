@@ -1,0 +1,61 @@
+
+  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+body {
+	background:
+		url('http://freedomreply.com/wp-content/uploads/2014/06/background-images-for-web-design-1.jpg')
+		fixed;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+
+</style>
+</head> 
+<body>
+    <div name="view_applied_job" ng-controller="JobController as ctrl"  style="width:800px; margin:0 auto;">
+        <div class="container">
+                    <h2 allign="center">Your Applied Job</h2>
+            <div class="row">
+                
+                <div class="col-md-10">
+
+                    <div class="table-responsive custom-bg-inset">
+                        <table class="table" >
+                        
+                            <thead>
+                                <tr>
+                                    <th>JobID</th>                                    
+                                    <th>Date Applied</th>
+                                    <th>Status</th>    
+                                    <th>Reason</th>                               
+                                </tr>
+                            </thead>
+                            <tbody ng-init="ctrl.getMyAppliedJobs()">
+                                <tr ng-repeat="jobapplication in ctrl.jobapplications">
+                               <td>{{jobapplication.jobid}}</td>
+                                    <td>{{jobapplication.applieddate}}</td>
+                                    <td>{{jobapplication.status}}</td> 
+                                    <td>
+                                    <p ng-show="jobapplication.status=='S' || jobapplication.status=='C' || jobapplication.status=='R'">
+                                    {{jobapplication.reason}}
+                                    </p>
+                                    </td>
+                                </tr>                               
+                            </tbody>
+                        </table>
+                        
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+  </html> 
